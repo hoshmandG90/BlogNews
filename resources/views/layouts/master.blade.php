@@ -25,6 +25,8 @@
    
     @livewireScripts
     @livewireStyles
+
+
     
     <style>
         ::-webkit-scrollbar {
