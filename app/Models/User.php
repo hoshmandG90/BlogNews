@@ -19,10 +19,13 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
-        'email',
-        'password',
+         'title',
+         'body',
+         'photos',
+         'excerpt'
     ];
 
+    public $timestamps=true;
     /**
      * The attributes that should be hidden for serialization.
      *
@@ -41,4 +44,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function getImagePathAttribute(){
+        return 'upload/photos/'.$this->photos;
+    }
+    
 }

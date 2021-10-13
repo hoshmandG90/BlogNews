@@ -1,14 +1,11 @@
-    /* can be configured in tailwind.config.js */
-    .group:hover .group-hover\:block {
-        display: block;
-      }
-      .hover\:w-64:hover {
-        width: 45%;
-        }
-      
-      
-      /* NO NEED THIS CSS - just for custom scrollbar which can also be configured in tailwind.config.js*/
-      ::-webkit-scrollbar {
+@font-face {
+  font-family: 'Speda-Bold';
+  src: url('../fonts/Speda-Bold.ttf');
+}
+body{
+  font-family: 'Speda-Bold'
+};
+::-webkit-scrollbar {
         width: 3px;
         height: 3px;
       }
@@ -41,3 +38,4 @@
       ::-webkit-scrollbar-corner {
         background: transparent;
       }
+      
