@@ -11,13 +11,15 @@ class Show extends Component
     use WithPagination;
     public $limit=20;
 
+    public $search;
+
 
     public function LoadMore(){
         $this->limit +=20;
     }
     public function render()
     {
-        $news=User::paginate($this->limit);
+        $news=User::search($this->search)->paginate($this->limit);
         return view('admin.show',compact('news'))->extends('layouts.master');
     }
 }
