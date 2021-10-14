@@ -10,7 +10,10 @@
           سەردێری هەواڵەکە
         </label>
         <input wire:model.defer="title" class="form-textarea block w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5"  type="text">
-        <p class="text-gray-600 text-xs italic">Remove if not needed</p>
+        @error('title')
+        <p class=" font-semibold text-xs mt-2 text-red-500">{{ $message }}</p>
+ 
+        @enderror
       </div>
     </div>
     <div class="flex flex-wrap -mx-3 mb-6">
@@ -19,8 +22,10 @@
            کورتەیەك هەواڵەکە
         </label>
         <input wire:model.defer="excerpt" class="form-textarea block w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5"  type="text">
-        <p class="text-gray-600 text-xs italic">Some tips - as long as needed</p>
-      </div>
+        @error('excerpt')
+        <p class=" font-semibold text-xs mt-2 text-red-500">{{ $message }}</p>
+ 
+        @enderror      </div>
     </div>
     <div     wire:ignore
     class="rounded-md shadow-sm"
@@ -39,8 +44,12 @@
         </label>
         <input id="x" type="hidden">
         <trix-editor wire:model.defer="body" x-ref="trix"  input="x" class="form-textarea block w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5"></trix-editor>
-        <p class="text-gray-600 text-xs italic">Re-size can be disabled by set by resize-none / resize-y / resize-x / resize</p>
-      </div>
+       
+       </div>
+       @error('body')
+       <p class=" font-semibold text-xs mt-2 text-red-500">{{ $message }}</p>
+
+       @enderror  
     </div>
     <div class="grid grid-cols-1 mt-5 mx-7 mb-3 mt-2">
         <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold mb-1">Upload Photo</label>
@@ -54,6 +63,11 @@
               </label>
           </div>
       </div>
+
+      @error('photos')
+      <p class=" font-semibold text-xs mt-2 text-red-500">{{ $message }}</p>
+
+      @enderror
 
       @if ($photos)
           

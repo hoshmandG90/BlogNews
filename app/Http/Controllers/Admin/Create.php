@@ -18,9 +18,16 @@ class Create extends Component
     public $body;
     public $photos;
     public function store(){
+  
+
+        $this->Validate([
+            'title' =>'required|max:20',
+            'excerpt' =>'required|max:255',
+            'body'=>'required',
+            'photos' =>'image|max:6000'
+        ]);
         $GetFileUplaod=\Str::random(20).".".$this->photos->getClientOriginalExtension();
         $this->photos->storeAs('photos',$GetFileUplaod,'hosts');
-
         User::create([
             'name' => 'Sana Fazil',
             'title'=>$this->title,

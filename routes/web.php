@@ -28,3 +28,6 @@ Route::get('/Create',App\Http\Controllers\Admin\Create::class)->name('create');
 Route::get('/Create/{user}',App\Http\Controllers\Admin\Index::class)->name('show');
 
 Route::get('/view',App\Http\Controllers\Admin\Table::class)->name('view');
+
+
+Route::get('/Edit/{user}',App\Http\Controllers\Admin\Edit::class)->name('Edit');
