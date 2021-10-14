@@ -17,6 +17,7 @@ class Create extends Component
     public $excerpt;
     public $body;
     public $photos;
+  
     public function store(){
   
 
@@ -24,7 +25,7 @@ class Create extends Component
             'title' =>'required|max:20',
             'excerpt' =>'required|max:255',
             'body'=>'required',
-            'photos' =>'image|max:6000'
+            'photos' =>'image|max:8000'
         ]);
         $GetFileUplaod=\Str::random(20).".".$this->photos->getClientOriginalExtension();
         $this->photos->storeAs('photos',$GetFileUplaod,'hosts');

@@ -9,7 +9,9 @@
         <label class="block uppercase tracking-wide  text-xs font-bold mb-2" for="grid-password">
           سەردێری هەواڵەکە
         </label>
-        <input wire:model.defer="title" class="form-textarea block w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5"  type="text">
+        <input wire:model.defer="title"                     
+        class="w-full py-2 pl-8 pr-2 text-sm text-gray-700 placeholder-gray-600 bg-gray-100 border-0 rounded-md dark:placeholder-gray-500 dark:focus:shadow-outline-gray dark:focus:placeholder-gray-600 dark:bg-gray-700 dark:text-gray-200 focus:placeholder-gray-500 focus:bg-white focus:border-purple-300 focus:outline-none focus:shadow-outline-purple form-input"
+        type="text">
         @error('title')
         <p class=" font-semibold text-xs mt-2 text-red-500">{{ $message }}</p>
  
@@ -21,7 +23,9 @@
         <label class="block uppercase tracking-wide  text-xs font-bold mb-2" for="grid-password">
            کورتەیەك هەواڵەکە
         </label>
-        <input wire:model.defer="excerpt" class="form-textarea block w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5"  type="text">
+        <input wire:model.defer="excerpt"
+        class="w-full py-2 pl-8 pr-2 text-sm text-gray-700 placeholder-gray-600 bg-gray-100 border-0 rounded-md dark:placeholder-gray-500 dark:focus:shadow-outline-gray dark:focus:placeholder-gray-600 dark:bg-gray-700 dark:text-gray-200 focus:placeholder-gray-500 focus:bg-white focus:border-purple-300 focus:outline-none focus:shadow-outline-purple form-input"
+        type="text">
         @error('excerpt')
         <p class=" font-semibold text-xs mt-2 text-red-500">{{ $message }}</p>
  
@@ -43,7 +47,9 @@
           درێزەی بابەت
         </label>
         <input id="x" type="hidden">
-        <trix-editor wire:model.defer="body" x-ref="trix"  input="x" class="form-textarea block w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5"></trix-editor>
+        <trix-editor wire:model.defer="body" x-ref="trix"  input="x" 
+        class="w-full py-2 pl-8 pr-2 text-sm text-gray-700 placeholder-gray-600 bg-gray-100 border-0 rounded-md dark:placeholder-gray-500 dark:focus:shadow-outline-gray dark:focus:placeholder-gray-600 dark:bg-gray-700 dark:text-gray-200 focus:placeholder-gray-500 focus:bg-white focus:border-purple-300 focus:outline-none focus:shadow-outline-purple form-input"
+        ></trix-editor>
        
        </div>
        @error('body')

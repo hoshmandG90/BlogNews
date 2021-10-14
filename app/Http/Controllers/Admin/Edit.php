@@ -16,6 +16,7 @@ class Edit extends Component
     public $excerpt;
     public $body;
     public $photos;
+    public $NewPhotos;
     public function mount(User $user){
         $this->user = $user;
         $this->title = $user->title;
@@ -25,8 +26,20 @@ class Edit extends Component
     }
 
     public function Edit(User $user){
-       
-        dd($this->body);
+    
+        $GetFileUplaod=\Str::random(20).".".$this->NewPhotos->getClientOriginalExtension();
+        $this->NewPhotos->storeAs('photos',$GetFileUplaod,'hosts');
+        $user->update([
+            'name' => 'sana Fazil',
+            'title' => $this->title,
+            'body' => $this->body,
+            'excerpt' =>$this->excerpt,
+            'photos' =>$GetFileUplaod,
+        ]);
+
+        notyf()->livewire()->position('y','top')->addSuccess('updated successfully');
+        return back();
+    
     }
     public function render()
     {

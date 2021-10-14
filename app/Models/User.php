@@ -46,7 +46,7 @@ class User extends Authenticatable
     ];
 
     public function getImagePathAttribute(){
-        return '/upload/photos/'.$this->photos;
+        return 'upload/photos/'.$this->photos;
     }
 
     public static function search($search){

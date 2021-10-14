@@ -6,7 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ZingSoft</title>
 
+    <link rel="stylesheet" href="{{ asset('assets/css/tailwind.min.css') }}">
     @livewireStyles
+
+   <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 </head>
 <body>
 
@@ -14,8 +17,7 @@
 @yield('content')
 
 @livewireScripts
-<script type="model">import hotwiredTurbo from 'https://cdn.skypack.dev/@hotwired/turbo'</script>
-<script src="https://cdn.jsdelivr.net/gh/livewire/turbolinks@v0.1.x/dist/livewire-turbolinks.js" data-turbolinks-eval="false" data-turbo-eval="false"></script>
+
 
 
     

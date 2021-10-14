@@ -10,7 +10,7 @@
                 </svg>
 
             </div>
-            <div wire:loading wire:target="search"  style="position: absolute;left:94%"  class="w-5    float-right pl-2 m-2 mr-2 h-5 border-2 border-dashed rounded-full animate-spin dark:border-violet-400"></div>
+            <div wire:loading wire:target="search"  style="position: absolute;left:88%"  class="w-5    float-right pl-2 m-2 mr-2 h-5 border-2 border-dashed rounded-full animate-spin dark:border-violet-400"></div>
 
             <input wire:model="search"
             class="w-full pl-8 pr-2 text-sm text-gray-700 placeholder-gray-600 bg-gray-100 border-0 rounded-md dark:placeholder-gray-500 dark:focus:shadow-outline-gray dark:focus:placeholder-gray-600 dark:bg-gray-700 dark:text-gray-200 focus:placeholder-gray-500 focus:bg-white focus:border-purple-300 focus:outline-none focus:shadow-outline-purple form-input"
@@ -25,12 +25,12 @@
     @if ($news->isNotEmpty())
         
 
-	<div class="grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+	<div class="grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 mt-4">
         @foreach ($news as $item)
             
       
         <a href="{{ route('show',$item->id) }}" class="max-w-sm mx-auto group hover:no-underline focus:no-underline dark:bg-coolGray-900">
-            <img role="presentation" class="object-cover w-full rounded h-44 dark:bg-coolGray-500" src="https://images.pexels.com/photos/736843/pexels-photo-736843.jpeg?cs=srgb&dl=pexels-kat-smith-736843.jpg&fm=jpg">
+            <img role="presentation" class="object-cover w-full rounded h-44 dark:bg-coolGray-500" src="{{ $item->imagepath }}">
             <div class="p-6 space-y-2">
                 <h3 class="text-2xl font-semibold group-hover:underline group-focus:underline">{{ $item->title }}</h3>
                 <span class="text-xs dark:text-coolGray-400">{{ $item->created_at->format('M  d  Y') }}</span>

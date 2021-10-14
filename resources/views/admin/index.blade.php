@@ -16,7 +16,7 @@
 <section class="relative pt-12  bg-gray-50 dark:bg-gray-900 mb-3 dark:text-gray-500 ">
 <div class="items-center flex flex-wrap">
   <div class="w-full md:w-4/12 ml-auto mr-auto px-4">
-    <img alt="..." class="max-w-full rounded-lg shadow-lg" height="200px" src="{{ $item->imagepath }}">
+    <img alt="..." class="max-w-full rounded-lg shadow-lg" height="200px" src="../upload/photos/{{ $item->photos }}">
   </div>
   <div class="w-full md:w-5/12 ml-auto mr-auto px-4">
     <div class="md:pr-12 mt-3">
