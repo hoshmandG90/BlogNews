@@ -27,7 +27,7 @@ class Table extends Component
     }
     public function render()
     {
-        $Latest=User::latest()->paginate(20);
+        $Latest=User::search($this->search)->latest()->paginate(20);
         return view('admin.table',compact('Latest'))->extends('layouts.master');
     }
 }

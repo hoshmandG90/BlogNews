@@ -46,7 +46,15 @@ class User extends Authenticatable
     ];
 
     public function getImagePathAttribute(){
-        return 'upload/photos/'.$this->photos;
+        return '/upload/photos/'.$this->photos;
+    }
+
+    public static function search($search){
+        return empty($search) ? static::query() :
+        static::where('title','LIKE','%'.$search.'%')
+        ->OrWhere('excerpt','LIKE','%'.$search.'%')
+        ->OrWhere('body','LIKE','%'.$search.'%')
+        ->OrWhere('created_at','LIKE','%'.$search.'%'); 
     }
     
 }
