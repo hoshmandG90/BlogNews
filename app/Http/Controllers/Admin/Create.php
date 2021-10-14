@@ -29,7 +29,8 @@ class Create extends Component
             'photos' => $GetFileUplaod,
 
         ]);
-
+        notyf()->livewire()->position('y','top')->addSuccess('the post has been created successfully ');
+        return back();
     }
     public function render()
     {
